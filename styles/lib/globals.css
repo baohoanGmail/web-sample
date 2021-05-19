@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:400,700,300,500,400italic,700italic,300italic|Roboto:400");
+
+@font-face {
+  font-family: "Muli-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/5fd310a632acc12df39aea63/files/muli.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+.align-self-flex-end {
+  align-self: flex-end;
+}
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+.auto-animated div {
+  opacity: 0;
+  position: absolute;
+  --z-index: -1;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.hidden,
+.hidden * {
+  visibility: hidden;
+  pointer-events: none;
+}
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  opacity: 0;
+  display: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.overlay.animate-appear {
+  opacity: 0;
+  display: block;
+  animation: reveal 0.3s ease-in-out 1 normal forwards;
+}
+.overlay.animate-disappear {
+  opacity: 1;
+  display: block;
+  animation: reveal 0.3s ease-in-out 1 reverse forwards;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.smart-layers-pointers,
+.smart-layers-pointers * {
+  pointer-events: auto;
+  visibility: visible;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+input:focus {
+  outline: none;
+}
